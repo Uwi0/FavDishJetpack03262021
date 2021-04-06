@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.kakapo.favoritdish.R
 import com.kakapo.favoritdish.databinding.FragmentAllDishesBinding
-import com.kakapo.favoritdish.view.activities.AddEmptyDishActivity
+import com.kakapo.favoritdish.view.activities.AddUpdateDishActivity
 import com.kakapo.favoritdish.viewmodel.HomeViewModel
 
 class AllDishesFragment : Fragment() {
@@ -57,7 +57,7 @@ class AllDishesFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_add_dish -> {
-                val intent = Intent(requireActivity(), AddEmptyDishActivity::class.java)
+                val intent = Intent(requireActivity(), AddUpdateDishActivity::class.java)
                 startActivity(intent)
                 return true
             }
