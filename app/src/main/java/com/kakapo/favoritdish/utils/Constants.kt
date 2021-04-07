@@ -39,7 +39,7 @@ object Constants {
         return list
     }
 
-    fun dishCookTime(): ArrayList<String>{
+    fun dishCookingTime(): ArrayList<String>{
         val list = ArrayList<String>()
         list.add("10")
         list.add("15")
