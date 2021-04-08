@@ -40,6 +40,35 @@ android {
         viewBinding true
     }
 }
+//configurations.all
+//        {
+//            resolutionStrategy.eachDependency { details ->
+//                if (details.requested.group == 'androidx.room'
+//                        && !details.requested.name.contains('room-runtime')) {
+//                    details.useVersion "2.1.0-alpha04"
+//                }
+//                if (details.requested.group == 'androidx.room'
+//                        && !details.requested.name.contains('room-testing')) {
+//                    details.useVersion "2.1.0-alpha04"
+//                }
+//                if (details.requested.group == 'androidx.room'
+//                        && !details.requested.name.contains('room-rxjava2')) {
+//                    details.useVersion "2.1.0-alpha04"
+//                }
+//                if (details.requested.group == 'androidx.room'
+//                        && !details.requested.name.contains('room-common')) {
+//                    details.useVersion "2.1.0-alpha04"
+//                }
+//                if (details.requested.group == 'androidx.room'
+//                        && !details.requested.name.contains('room-migration')) {
+//                    details.useVersion "2.1.0-alpha04"
+//                }
+//                if (details.requested.group == 'androidx.room'
+//                        && !details.requested.name.contains('room-compiler')) {
+//                    details.useVersion "2.1.0-alpha04"
+//                }
+//            }
+//        }
 
 dependencies {
 
@@ -61,15 +90,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
-    //room
-    def room_version = "2.2.6"
-
-    implementation "androidx.room:room-runtime:$room_version"
+    def room_version = '2.2.5'
+    implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:$room_version"
-
-    // optional - Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
 }
