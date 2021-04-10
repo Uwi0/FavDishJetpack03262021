@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kakapo.favoritdish.databinding.ItemDishLayoutBinding
 import com.kakapo.favoritdish.model.entities.FavDish
+import com.kakapo.favoritdish.view.fragments.AllDishesFragment
 
 class FavDishAdapter(
     private val fragment: Fragment
@@ -33,6 +34,12 @@ class FavDishAdapter(
             .into(holder.ivDishImage)
 
         holder.tvTitle.text = dish.title
+
+        holder.itemView.setOnClickListener{
+            if (fragment is AllDishesFragment){
+                fragment.dishDetails()
+            }
+        }
     }
 
     override fun getItemCount(): Int {

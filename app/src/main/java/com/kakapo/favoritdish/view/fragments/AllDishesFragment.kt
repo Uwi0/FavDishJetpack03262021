@@ -2,15 +2,16 @@ package com.kakapo.favoritdish.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kakapo.favoritdish.R
 import com.kakapo.favoritdish.application.FavDishApplication
 import com.kakapo.favoritdish.databinding.FragmentAllDishesBinding
 import com.kakapo.favoritdish.view.activities.AddUpdateDishActivity
+import com.kakapo.favoritdish.view.activities.MainActivity
 import com.kakapo.favoritdish.view.adapter.FavDishAdapter
 import com.kakapo.favoritdish.viewmodel.FavDishViewModel
 import com.kakapo.favoritdish.viewmodel.FavDishViewModelFactory
@@ -23,9 +24,6 @@ class AllDishesFragment : Fragment() {
         FavDishViewModelFactory((requireActivity().application as FavDishApplication).repository)
     }
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,4 +82,21 @@ class AllDishesFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onResume() {
+        super.onResume()
+        if(requireActivity() is MainActivity){
+            (activity as MainActivity?)?.showBottomNavigationView()
+        }
+    }
+
+    fun dishDetails(){
+        findNavController().navigate(AllDishesFragmentDirections.actionAllDishesToDishDetails())
+
+        if(requireActivity() is MainActivity){
+            (activity as MainActivity?)?.hideBottomNavigationView()
+        }
+    }
+
+
 }
