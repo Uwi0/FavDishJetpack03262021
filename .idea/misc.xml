@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/favorite_button_background.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_add_a_photo_24.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_favorite_dish.xml" value="0.2604166666666667" />
+        <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_favorite_unselected.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_image_photo_24.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_vecator_gallery_24.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_vector_photo_camera_24.xml" value="0.2604166666666667" />

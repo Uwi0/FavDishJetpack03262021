@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.kakapo.favoritdish.R
 import com.kakapo.favoritdish.application.FavDishApplication
 import com.kakapo.favoritdish.databinding.FragmentAllDishesBinding
+import com.kakapo.favoritdish.model.entities.FavDish
 import com.kakapo.favoritdish.view.activities.AddUpdateDishActivity
 import com.kakapo.favoritdish.view.activities.MainActivity
 import com.kakapo.favoritdish.view.adapter.FavDishAdapter
@@ -90,8 +91,10 @@ class AllDishesFragment : Fragment() {
         }
     }
 
-    fun dishDetails(){
-        findNavController().navigate(AllDishesFragmentDirections.actionAllDishesToDishDetails())
+    fun dishDetails(favDish: FavDish){
+        findNavController().navigate(AllDishesFragmentDirections.actionAllDishesToDishDetails(
+            favDish
+        ))
 
         if(requireActivity() is MainActivity){
             (activity as MainActivity?)?.hideBottomNavigationView()

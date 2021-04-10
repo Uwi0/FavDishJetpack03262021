@@ -37,7 +37,7 @@ class FavDishAdapter(
 
         holder.itemView.setOnClickListener{
             if (fragment is AllDishesFragment){
-                fragment.dishDetails()
+                fragment.dishDetails(dish)
             }
         }
     }

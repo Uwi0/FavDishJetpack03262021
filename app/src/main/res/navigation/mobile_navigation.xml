@@ -30,5 +30,13 @@
         android:id="@+id/dishDetailFragment"
         android:name="com.kakapo.favoritdish.view.fragments.DishDetailFragment"
         android:label="@string/title_dish_details"
-        tools:layout="@layout/fragment_dish_detail" />
+        tools:layout="@layout/fragment_dish_detail">
+
+        <argument
+            android:name="dishDetails"
+            app:argType="com.kakapo.favoritdish.model.entities.FavDish"
+
+            />
+
+    </fragment>
 </navigation>
