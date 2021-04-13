@@ -8,6 +8,7 @@
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_favorite_dish.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_favorite_unselected.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_image_photo_24.xml" value="0.2604166666666667" />
+        <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_more.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_vecator_gallery_24.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/drawable/ic_vector_photo_camera_24.xml" value="0.2604166666666667" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/layout/activity_add_empty_dish.xml" value="0.24048913043478262" />
@@ -25,6 +26,7 @@
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/layout/item_custom_list.xml" value="0.24427083333333333" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/layout/item_dish_layout.xml" value="0.24427083333333333" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24427083333333333" />
+        <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/menu/menu_adapter.xml" value="0.24427083333333333" />
         <entry key="..\:/Document/coding/Android Project/android jetpack mastering/favDish/FavDishJetpack03262021/app/src/main/res/menu/menu_all_dishes.xml" value="0.24427083333333333" />
       </map>
     </option>
