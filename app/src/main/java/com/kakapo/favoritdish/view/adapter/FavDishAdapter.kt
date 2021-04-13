@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.kakapo.favoritdish.databinding.ItemDishLayoutBinding
 import com.kakapo.favoritdish.model.entities.FavDish
 import com.kakapo.favoritdish.view.fragments.AllDishesFragment
+import com.kakapo.favoritdish.view.fragments.FavoriteDishesFragment
 
 class FavDishAdapter(
     private val fragment: Fragment
@@ -37,6 +38,8 @@ class FavDishAdapter(
 
         holder.itemView.setOnClickListener{
             if (fragment is AllDishesFragment){
+                fragment.dishDetails(dish)
+            }else if(fragment is FavoriteDishesFragment){
                 fragment.dishDetails(dish)
             }
         }

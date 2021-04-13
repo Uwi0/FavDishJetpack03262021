@@ -10,9 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kakapo.favoritdish.application.FavDishApplication
 import com.kakapo.favoritdish.databinding.FragmentFavoriteDishesBinding
+import com.kakapo.favoritdish.model.entities.FavDish
+import com.kakapo.favoritdish.view.activities.MainActivity
 import com.kakapo.favoritdish.view.adapter.FavDishAdapter
 import com.kakapo.favoritdish.viewmodel.DashboardViewModel
 import com.kakapo.favoritdish.viewmodel.FavDishViewModel
@@ -66,4 +69,22 @@ class FavoriteDishesFragment : Fragment() {
         super.onDestroyView()
         mBinding = null
     }
+
+    override fun onResume() {
+        super.onResume()
+        if (requireActivity() is MainActivity){
+            (activity as MainActivity).showBottomNavigationView()
+        }
+    }
+
+    fun dishDetails(favDish: FavDish){
+        findNavController()
+            .navigate(FavoriteDishesFragmentDirections.actionFavoriteDishesToDishDetails(favDish))
+        if(requireActivity() is MainActivity){
+            (activity as MainActivity).hideBottomNavigationView()
+
+        }
+    }
+
+
 }
