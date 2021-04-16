@@ -1,6 +1,7 @@
 package com.kakapo.favoritdish.view.adapter
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,8 @@ import com.bumptech.glide.Glide
 import com.kakapo.favoritdish.R
 import com.kakapo.favoritdish.databinding.ItemDishLayoutBinding
 import com.kakapo.favoritdish.model.entities.FavDish
+import com.kakapo.favoritdish.utils.Constants
+import com.kakapo.favoritdish.view.activities.AddUpdateDishActivity
 import com.kakapo.favoritdish.view.fragments.AllDishesFragment
 import com.kakapo.favoritdish.view.fragments.FavoriteDishesFragment
 
@@ -55,17 +58,17 @@ class FavDishAdapter(
 
             popup.setOnMenuItemClickListener {
                 if (it.itemId == R.id.action_edit_dish){
+                    val intent = Intent(fragment.requireActivity(), AddUpdateDishActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_DISH_DETAILS, dish)
+                    fragment.requireActivity().startActivity(intent)
                     Log.i("You have clicked on", "edit option of ${dish.title}")
                 }else if(it.itemId == R.id.action_delete_dish){
-                    Log.i("You have clicked on", "delete option of ${dish.title}")
+                   if (fragment is AllDishesFragment){
+                       fragment.deleteDish(dish)
+                   }
                 }
 
                 true
-            }
-            if (fragment is AllDishesFragment){
-                holder.ibMore.visibility = View.VISIBLE
-            }else if(fragment is FavoriteDishesFragment){
-                holder.ibMore.visibility = View.GONE
             }
 
             popup.show()

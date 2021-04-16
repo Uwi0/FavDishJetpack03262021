@@ -45,4 +45,11 @@
     <string name="menu_icon">Menu Icon</string>
     <string name="action_edit_dish">Edit Dish</string>
     <string name="action_Delete_dish">Delete Dish</string>
+    <string name="title_edit_dish">Update Dish</string>
+    <string name="title_add_dish">Add Dish</string>
+    <string name="lbl_edit_dish">Edit Dish</string>
+    <string name="title_delete_dish">Delete Dish </string>
+    <string name="msg_delete_dish_dialog">Are you sure want to delete %1$s</string>
+    <string name="lbl_yes">Yes</string>
+    <string name="lbl_no">No</string>
 </resources>
