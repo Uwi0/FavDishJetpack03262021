@@ -1,6 +1,7 @@
 package com.kakapo.favoritdish.view.fragments
 
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -8,12 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kakapo.favoritdish.R
 import com.kakapo.favoritdish.application.FavDishApplication
+import com.kakapo.favoritdish.databinding.DialogCustomListBinding
 import com.kakapo.favoritdish.databinding.FragmentAllDishesBinding
 import com.kakapo.favoritdish.model.entities.FavDish
+import com.kakapo.favoritdish.utils.Constants
 import com.kakapo.favoritdish.view.activities.AddUpdateDishActivity
 import com.kakapo.favoritdish.view.activities.MainActivity
+import com.kakapo.favoritdish.view.adapter.CustomListItemAdapter
 import com.kakapo.favoritdish.view.adapter.FavDishAdapter
 import com.kakapo.favoritdish.viewmodel.FavDishViewModel
 import com.kakapo.favoritdish.viewmodel.FavDishViewModelFactory
@@ -81,6 +86,10 @@ class AllDishesFragment : Fragment() {
                 startActivity(intent)
                 return true
             }
+            R.id.action_filter_dishes ->{
+                filterListDialog()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -90,6 +99,22 @@ class AllDishesFragment : Fragment() {
         if(requireActivity() is MainActivity){
             (activity as MainActivity?)?.showBottomNavigationView()
         }
+    }
+
+    private fun filterListDialog(){
+        val customDialog = Dialog(requireActivity())
+        val binding: DialogCustomListBinding = DialogCustomListBinding.inflate(layoutInflater)
+
+        customDialog.setContentView(binding.root)
+        binding.tvTitle.text = resources.getString(R.string.title_select_item_to_filter)
+
+        val dishType = Constants.dishTypes()
+        dishType.add(0, Constants.ALL_ITEMS)
+        binding.rvList.layoutManager = LinearLayoutManager(requireActivity())
+        val adapter = CustomListItemAdapter(requireActivity(), dishType, Constants.FILTER_SELECTION)
+        binding.rvList.adapter = adapter
+        customDialog.setCancelable(true)
+        customDialog.show()
     }
 
     fun dishDetails(favDish: FavDish){
