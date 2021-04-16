@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.Adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -170,7 +169,19 @@ class AllDishesFragment : Fragment() {
                 }
             }
         }else{
-            Log.i("filter list", "get filter list")
+           mFavDishViewModel.getFilterList(filterItemSelection).observe(viewLifecycleOwner){ dishes ->
+               dishes?.let {
+                   if (it.isNotEmpty()){
+                       mBinding.rvDishesList.visibility = View.VISIBLE
+                       mBinding.tvNoDishesAddedYet.visibility = View.GONE
+
+                       mFavDishAdapter.dishesList(it)
+                   }else{
+                       mBinding.rvDishesList.visibility = View.GONE
+                       mBinding.tvNoDishesAddedYet.visibility = View.VISIBLE
+                   }
+               }
+           }
         }
     }
 }
