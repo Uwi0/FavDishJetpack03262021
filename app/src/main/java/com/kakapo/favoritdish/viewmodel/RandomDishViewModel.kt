@@ -2,6 +2,7 @@ package com.kakapo.favoritdish.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.kakapo.favoritdish.model.entities.RandomDish
 import com.kakapo.favoritdish.model.network.RandomDishApiService
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -9,7 +10,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.observers.DisposableSingleObserver
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class RandomDishViewModel {
+class RandomDishViewModel: ViewModel() {
 
     private val randomRecipeApiService = RandomDishApiService()
     private val compositeDisposable = CompositeDisposable()
